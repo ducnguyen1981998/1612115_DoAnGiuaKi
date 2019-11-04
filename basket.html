@@ -264,54 +264,123 @@
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                  <li aria-current="page" class="breadcrumb-item active">Đặt hàng- Phương thức vận chuyển</li>
+                  <li aria-current="page" class="breadcrumb-item active">Chi tiết giỏ hàng</li>
                 </ol>
               </nav>
             </div>
-            <div id="checkout" class="col-lg-9">
+            <div id="basket" class="col-lg-9">
               <div class="box">
-                <form method="get" action="checkout3.html">
-                  <h1>Đặt hàng- Phương thức vận chuyển</h1>
-<div class="nav flex-column flex-md-row nav-pills text-center"><a href="checkout1.html" class="nav-link flex-sm-fill text-sm-center active"> <i class="fa fa-map-marker">                  </i>Địa chỉ</a><a href="#" class="nav-link flex-sm-fill text-sm-center disabled"> <i class="fa fa-truck">                       </i>Phương thức giao hàng</a><a href="#" class="nav-link flex-sm-fill text-sm-center disabled"> <i class="fa fa-money">                      </i>Phương thức thanh toán</a><a href="#" class="nav-link flex-sm-fill text-sm-center disabled"> <i class="fa fa-eye">                     </i>Xem lại đơn hàng</a></div>
-                  <div class="content py-3">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="box shipping-method">
-                          <h4>Giao hàng nhanh</h4>
-                          <p>Nhận hàng trong ngày tiếp theo.</p>
-                          <div class="box-footer text-center">
-                            <input type="radio" name="delivery" value="delivery1">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="box shipping-method">
-                          <h4>Giao hàng tiết kiệm</h4>
-                          <p>Nhận hàng trong vòng 4 ngày.</p>
-                          <div class="box-footer text-center">
-                            <input type="radio" name="delivery" value="delivery2">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="box shipping-method">
-                          <h4>Giao hàng thường</h4>
-                          <p>Nhận hàng trong vòng 7-15 ngày.</p>
-                          <div class="box-footer text-center">
-                            <input type="radio" name="delivery" value="delivery3">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                <form method="post" action="checkout1.html">
+                  <h1>Chi tiết giỏ hàng</h1>
+                  <p class="text-muted">Bạn đang có 3 sản phẩm trong giỏ.</p>
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th colspan="2">Sản phẩm</th>
+                          <th>Số lượng</th>
+                          <th>Đơn giá</th>
+                          <th>Giảm giá</th>
+                          <th colspan="2">Tổng</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><a href="#"><img src="img/detailsquare.jpg" alt="White Blouse Armani"></a></td>
+                          <td><a href="#">White Blouse Armani</a></td>
+                          <td>
+                            <input type="number" value="2" class="form-control">
+                          </td>
+                          <td>$123.00</td>
+                          <td>$0.00</td>
+                          <td>$246.00</td>
+                          <td><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                        </tr>
+                        <tr>
+                          <td><a href="#"><img src="img/basketsquare.jpg" alt="Black Blouse Armani"></a></td>
+                          <td><a href="#">Black Blouse Armani</a></td>
+                          <td>
+                            <input type="number" value="1" class="form-control">
+                          </td>
+                          <td>$200.00</td>
+                          <td>$0.00</td>
+                          <td>$200.00</td>
+                          <td><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th colspan="5">Tổng hóa đơn</th>
+                          <th colspan="2">$446.00</th>
+                        </tr>
+                      </tfoot>
+                    </table>
                   </div>
-                  <div class="box-footer d-flex justify-content-between"><a href="checkout1.html" class="btn btn-outline-secondary"><i class="fa fa-chevron-left"></i>TRở về</a>
-                    <button type="submit" class="btn btn-primary">Tiếp tục đến phương thức thanh toán<i class="fa fa-chevron-right"></i></button>
+                  <!-- /.table-responsive-->
+                  <div class="box-footer d-flex justify-content-between flex-column flex-lg-row">
+                    <div class="left"><a href="category.html" class="btn btn-outline-secondary"><i class="fa fa-chevron-left"></i> Tiếp tục mua sắm</a></div>
+                    <div class="right">
+                      <button class="btn btn-outline-secondary"><i class="fa fa-refresh"></i> Làm mới</button>
+                      <button type="submit" class="btn btn-primary">Đặt hàng <i class="fa fa-chevron-right"></i></button>
+                    </div>
                   </div>
                 </form>
               </div>
               <!-- /.box-->
+              <div class="row same-height-row">
+                <div class="col-lg-3 col-md-6">
+                  <div class="box same-height">
+                    <h3>Bạn có thể sẽ thích</h3>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <div class="product same-height">
+                    <div class="flip-container">
+                      <div class="flipper">
+                        <div class="front"><a href="detail.html"><img src="img/product2.jpg" alt="" class="img-fluid"></a></div>
+                        <div class="back"><a href="detail.html"><img src="img/product2_2.jpg" alt="" class="img-fluid"></a></div>
+                      </div>
+                    </div><a href="detail.html" class="invisible"><img src="img/product2.jpg" alt="" class="img-fluid"></a>
+                    <div class="text">
+                      <h3>Fur coat</h3>
+                      <p class="price">$143</p>
+                    </div>
+                  </div>
+                  <!-- /.product-->
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <div class="product same-height">
+                    <div class="flip-container">
+                      <div class="flipper">
+                        <div class="front"><a href="detail.html"><img src="img/product1.jpg" alt="" class="img-fluid"></a></div>
+                        <div class="back"><a href="detail.html"><img src="img/product1_2.jpg" alt="" class="img-fluid"></a></div>
+                      </div>
+                    </div><a href="detail.html" class="invisible"><img src="img/product1.jpg" alt="" class="img-fluid"></a>
+                    <div class="text">
+                      <h3>Fur coat</h3>
+                      <p class="price">$143</p>
+                    </div>
+                  </div>
+                  <!-- /.product-->
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <div class="product same-height">
+                    <div class="flip-container">
+                      <div class="flipper">
+                        <div class="front"><a href="detail.html"><img src="img/product3.jpg" alt="" class="img-fluid"></a></div>
+                        <div class="back"><a href="detail.html"><img src="img/product3_2.jpg" alt="" class="img-fluid"></a></div>
+                      </div>
+                    </div><a href="detail.html" class="invisible"><img src="img/product3.jpg" alt="" class="img-fluid"></a>
+                    <div class="text">
+                      <h3>Fur coat</h3>
+                      <p class="price">$143</p>
+                    </div>
+                  </div>
+                  <!-- /.product-->
+                </div>
+              </div>
             </div>
-            <!-- /.col-md-9-->
+            <!-- /.col-lg-9-->
             <div class="col-lg-3">
               <div id="order-summary" class="box">
                 <div class="box-header">

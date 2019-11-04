@@ -264,98 +264,84 @@
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                  <li aria-current="page" class="breadcrumb-item active">Đặt hàng- Phương thức vận chuyển</li>
+                  <li aria-current="page" class="breadcrumb-item active">Lịch sử đặt hàng</li>
                 </ol>
               </nav>
             </div>
-            <div id="checkout" class="col-lg-9">
-              <div class="box">
-                <form method="get" action="checkout3.html">
-                  <h1>Đặt hàng- Phương thức vận chuyển</h1>
-<div class="nav flex-column flex-md-row nav-pills text-center"><a href="checkout1.html" class="nav-link flex-sm-fill text-sm-center active"> <i class="fa fa-map-marker">                  </i>Địa chỉ</a><a href="#" class="nav-link flex-sm-fill text-sm-center disabled"> <i class="fa fa-truck">                       </i>Phương thức giao hàng</a><a href="#" class="nav-link flex-sm-fill text-sm-center disabled"> <i class="fa fa-money">                      </i>Phương thức thanh toán</a><a href="#" class="nav-link flex-sm-fill text-sm-center disabled"> <i class="fa fa-eye">                     </i>Xem lại đơn hàng</a></div>
-                  <div class="content py-3">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="box shipping-method">
-                          <h4>Giao hàng nhanh</h4>
-                          <p>Nhận hàng trong ngày tiếp theo.</p>
-                          <div class="box-footer text-center">
-                            <input type="radio" name="delivery" value="delivery1">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="box shipping-method">
-                          <h4>Giao hàng tiết kiệm</h4>
-                          <p>Nhận hàng trong vòng 4 ngày.</p>
-                          <div class="box-footer text-center">
-                            <input type="radio" name="delivery" value="delivery2">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="box shipping-method">
-                          <h4>Giao hàng thường</h4>
-                          <p>Nhận hàng trong vòng 7-15 ngày.</p>
-                          <div class="box-footer text-center">
-                            <input type="radio" name="delivery" value="delivery3">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="box-footer d-flex justify-content-between"><a href="checkout1.html" class="btn btn-outline-secondary"><i class="fa fa-chevron-left"></i>TRở về</a>
-                    <button type="submit" class="btn btn-primary">Tiếp tục đến phương thức thanh toán<i class="fa fa-chevron-right"></i></button>
-                  </div>
-                </form>
-              </div>
-              <!-- /.box-->
-            </div>
-            <!-- /.col-md-9-->
             <div class="col-lg-3">
-              <div id="order-summary" class="box">
-                <div class="box-header">
-                  <h3 class="mb-0">Tổng chi phí</h3>
+              <!--
+              *** CUSTOMER MENU ***
+              _________________________________________________________
+              -->
+              <div class="card sidebar-menu">
+                <div class="card-header">
+                  <h3 class="h4 card-title">Lựa chọn</h3>
                 </div>
-                <p class="text-muted">Giao hàng, vận chuyển và thuế sẽ được tính thêm cho bạn.</p>
+                <div class="card-body">
+                  <ul class="nav nav-pills flex-column"><a href="customer-orders.html" class="nav-link active"><i class="fa fa-list"></i> Lịch sử đặt hàng</a><a href="customer-wishlist.html" class="nav-link"><i class="fa fa-heart"></i> Yêu thích</a><a href="customer-account.html" class="nav-link"><i class="fa fa-user"></i> Tài khoản của tôi</a><a href="index.html" class="nav-link"><i class="fa fa-sign-out"></i> Đăng xuất</a></ul>
+                </div>
+              </div>
+              <!-- /.col-lg-3-->
+              <!-- *** CUSTOMER MENU END ***-->
+            </div>
+            <div id="customer-orders" class="col-lg-9">
+              <div class="box">
+                <h1>Lịch sử đặt hàng</h1>
+                <p class="lead">Đơn đặt hàng của bạn ở đây</p>
+                <p class="text-muted">Nếu bạn có bất cứ câu hỏi gì, xin vui lòng <a href="contact.html">liên hệ với chúng tôi</a> để được phục vụ miễn phí 24/7.</p>
+                <hr>
                 <div class="table-responsive">
-                  <table class="table">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>Đơn hàng</th>
+                        <th>Ngày đặt hàng</th>
+                        <th>Tổng chi phí</th>
+                        <th>Trạng thái</th>
+                        <th>Quan sát</th>
+                      </tr>
+                    </thead>
                     <tbody>
                       <tr>
-                        <td>Tổng đặt hàng</td>
-                        <th>$446.00</th>
+                        <th># 1735</th>
+                        <td>22/06/2013</td>
+                        <td>$ 150.00</td>
+                        <td><span class="badge badge-info">Đang được gởi</span></td>
+                        <td><a href="customer-order.html" class="btn btn-primary btn-sm">Xem</a></td>
                       </tr>
                       <tr>
-                        <td>Vận chuyển và xử lý</td>
-                        <th>$10.00</th>
+                        <th># 1735</th>
+                        <td>22/06/2013</td>
+                        <td>$ 150.00</td>
+                        <td><span class="badge badge-info">Đang được gởi</span></td>
+                        <td><a href="customer-order.html" class="btn btn-primary btn-sm">View</a></td>
                       </tr>
                       <tr>
-                        <td>Thuế</td>
-                        <th>$0.00</th>
+                        <th># 1735</th>
+                        <td>22/06/2013</td>
+                        <td>$ 150.00</td>
+                        <td><span class="badge badge-success">Đã nhận</span></td>
+                        <td><a href="customer-order.html" class="btn btn-primary btn-sm">View</a></td>
                       </tr>
-                      <tr class="total">
-                        <td>Tổng cộng</td>
-                        <th>$456.00</th>
+                      <tr>
+                        <th># 1735</th>
+                        <td>22/06/2013</td>
+                        <td>$ 150.00</td>
+                        <td><span class="badge badge-danger">Đã hủy</span></td>
+                        <td><a href="customer-order.html" class="btn btn-primary btn-sm">View</a></td>
+                      </tr>
+                      <tr>
+                        <th># 1735</th>
+                        <td>22/06/2013</td>
+                        <td>$ 150.00</td>
+                        <td><span class="badge badge-warning">Chưa giao</span></td>
+                        <td><a href="customer-order.html" class="btn btn-primary btn-sm">View</a></td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
-              <div class="box">
-                <div class="box-header">
-                  <h4 class="mb-0">Mã giảm giá</h4>
-                </div>
-                <p class="text-muted">Nhập mã giảm giá của riêng bạn tại đây.</p>
-                <form>
-                  <div class="input-group">
-                    <input type="text" class="form-control"><span class="input-group-append">
-                      <button type="button" class="btn btn-primary"><i class="fa fa-gift"></i></button></span>
-                  </div>
-                  <!-- /input-group-->
-                </form>
-              </div>
             </div>
-            <!-- /.col-md-3-->
           </div>
         </div>
       </div>

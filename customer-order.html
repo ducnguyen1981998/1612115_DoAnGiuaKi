@@ -263,99 +263,96 @@
               <!-- breadcrumb-->
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                  <li aria-current="page" class="breadcrumb-item active">Đặt hàng- Phương thức vận chuyển</li>
+                  <li class="breadcrumb-item"><a href="#">TRang chủ</a></li>
+                  <li aria-current="page" class="breadcrumb-item"><a href="#">Lịch sử đặt hàng</a></li>
+                  <li aria-current="page" class="breadcrumb-item active">Đơn #1735</li>
                 </ol>
               </nav>
             </div>
-            <div id="checkout" class="col-lg-9">
-              <div class="box">
-                <form method="get" action="checkout3.html">
-                  <h1>Đặt hàng- Phương thức vận chuyển</h1>
-<div class="nav flex-column flex-md-row nav-pills text-center"><a href="checkout1.html" class="nav-link flex-sm-fill text-sm-center active"> <i class="fa fa-map-marker">                  </i>Địa chỉ</a><a href="#" class="nav-link flex-sm-fill text-sm-center disabled"> <i class="fa fa-truck">                       </i>Phương thức giao hàng</a><a href="#" class="nav-link flex-sm-fill text-sm-center disabled"> <i class="fa fa-money">                      </i>Phương thức thanh toán</a><a href="#" class="nav-link flex-sm-fill text-sm-center disabled"> <i class="fa fa-eye">                     </i>Xem lại đơn hàng</a></div>
-                  <div class="content py-3">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="box shipping-method">
-                          <h4>Giao hàng nhanh</h4>
-                          <p>Nhận hàng trong ngày tiếp theo.</p>
-                          <div class="box-footer text-center">
-                            <input type="radio" name="delivery" value="delivery1">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="box shipping-method">
-                          <h4>Giao hàng tiết kiệm</h4>
-                          <p>Nhận hàng trong vòng 4 ngày.</p>
-                          <div class="box-footer text-center">
-                            <input type="radio" name="delivery" value="delivery2">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="box shipping-method">
-                          <h4>Giao hàng thường</h4>
-                          <p>Nhận hàng trong vòng 7-15 ngày.</p>
-                          <div class="box-footer text-center">
-                            <input type="radio" name="delivery" value="delivery3">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="box-footer d-flex justify-content-between"><a href="checkout1.html" class="btn btn-outline-secondary"><i class="fa fa-chevron-left"></i>TRở về</a>
-                    <button type="submit" class="btn btn-primary">Tiếp tục đến phương thức thanh toán<i class="fa fa-chevron-right"></i></button>
-                  </div>
-                </form>
-              </div>
-              <!-- /.box-->
-            </div>
-            <!-- /.col-md-9-->
             <div class="col-lg-3">
-              <div id="order-summary" class="box">
-                <div class="box-header">
-                  <h3 class="mb-0">Tổng chi phí</h3>
+              <!--
+              *** CUSTOMER MENU ***
+              _________________________________________________________
+              -->
+              <div class="card sidebar-menu">
+                <div class="card-header">
+                  <h3 class="h4 card-title">Lựa chọn</h3>
                 </div>
-                <p class="text-muted">Giao hàng, vận chuyển và thuế sẽ được tính thêm cho bạn.</p>
-                <div class="table-responsive">
+                <div class="card-body">
+                  <ul class="nav nav-pills flex-column"><a href="customer-orders.html" class="nav-link active"><i class="fa fa-list"></i> Lịch sử đặt hàng</a><a href="customer-wishlist.html" class="nav-link"><i class="fa fa-heart"></i> Yêu thích</a><a href="customer-account.html" class="nav-link"><i class="fa fa-user"></i> Tài khoản của tôi</a><a href="index.html" class="nav-link"><i class="fa fa-sign-out"></i> Đăng xuất</a></ul>
+                </div>
+              </div>
+              <!-- /.col-lg-3-->
+              <!-- *** CUSTOMER MENU END ***-->
+            </div>
+            <div id="customer-order" class="col-lg-9">
+              <div class="box">
+                <h1>Đơn hàng #1735</h1>
+                <p class="lead">Đơn hàng #1735 đã được đặt vào ngày <strong>22/06/2013</strong>và hiện tại  <strong>đang được chuẩn bị</strong>.</p>
+                <p class="text-muted">Nếu bạn có bất kỳ câu hỏi nào, xin vui lòng <a href="contact.html"> liên hệ</a>, với chúng tôi, trung tâm dịch vụ khách hàng của chúng tôi làm việc cho bạn 24/7.</p>
+                <hr>
+                <div class="table-responsive mb-4">
                   <table class="table">
+                    <thead>
+                      <tr>
+                        <th colspan="2">Sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Mã giảm giá</th>
+                        <th>Tổng</th>
+                      </tr>
+                    </thead>
                     <tbody>
                       <tr>
-                        <td>Tổng đặt hàng</td>
+                        <td><a href="#"><img src="img/detailsquare.jpg" alt="White Blouse Armani"></a></td>
+                        <td><a href="#">White Blouse Armani</a></td>
+                        <td>2</td>
+                        <td>$123.00</td>
+                        <td>$0.00</td>
+                        <td>$246.00</td>
+                      </tr>
+                      <tr>
+                        <td><a href="#"><img src="img/basketsquare.jpg" alt="Black Blouse Armani"></a></td>
+                        <td><a href="#">Black Blouse Armani</a></td>
+                        <td>1</td>
+                        <td>$200.00</td>
+                        <td>$0.00</td>
+                        <td>$200.00</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <th colspan="5" class="text-right">Tổng cộng</th>
                         <th>$446.00</th>
                       </tr>
                       <tr>
-                        <td>Vận chuyển và xử lý</td>
+                        <th colspan="5" class="text-right">Vận chuyển và xử lý</th>
                         <th>$10.00</th>
                       </tr>
                       <tr>
-                        <td>Thuế</td>
+                        <th colspan="5" class="text-right">Thuế</th>
                         <th>$0.00</th>
                       </tr>
-                      <tr class="total">
-                        <td>Tổng cộng</td>
+                      <tr>
+                        <th colspan="5" class="text-right">Tổng hóa đơn</th>
                         <th>$456.00</th>
                       </tr>
-                    </tbody>
+                    </tfoot>
                   </table>
                 </div>
-              </div>
-              <div class="box">
-                <div class="box-header">
-                  <h4 class="mb-0">Mã giảm giá</h4>
-                </div>
-                <p class="text-muted">Nhập mã giảm giá của riêng bạn tại đây.</p>
-                <form>
-                  <div class="input-group">
-                    <input type="text" class="form-control"><span class="input-group-append">
-                      <button type="button" class="btn btn-primary"><i class="fa fa-gift"></i></button></span>
+                <!-- /.table-responsive-->
+                <div class="row addresses">
+                  <div class="col-lg-6">
+                    <h2>Địa chỉ hóa đơn</h2>
+                    <p>Duc Nguyen<br>43 Trần Phú<br>Phường 7<br>Quận 5<br>THPCM<br>Việt Nam</p>
                   </div>
-                  <!-- /input-group-->
-                </form>
+                  <div class="col-lg-6">
+                     <h2>Địa chỉ giao hàng</h2>
+                    <p>Duc Nguyen<br>43 Trần Phú<br>Phường 7<br>Quận 5<br>THPCM<br>Việt Nam</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <!-- /.col-md-3-->
           </div>
         </div>
       </div>

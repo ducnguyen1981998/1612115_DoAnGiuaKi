@@ -263,99 +263,68 @@
               <!-- breadcrumb-->
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                  <li aria-current="page" class="breadcrumb-item active">Đặt hàng- Phương thức vận chuyển</li>
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li aria-current="page" class="breadcrumb-item active">Text page</li>
                 </ol>
               </nav>
             </div>
-            <div id="checkout" class="col-lg-9">
-              <div class="box">
-                <form method="get" action="checkout3.html">
-                  <h1>Đặt hàng- Phương thức vận chuyển</h1>
-<div class="nav flex-column flex-md-row nav-pills text-center"><a href="checkout1.html" class="nav-link flex-sm-fill text-sm-center active"> <i class="fa fa-map-marker">                  </i>Địa chỉ</a><a href="#" class="nav-link flex-sm-fill text-sm-center disabled"> <i class="fa fa-truck">                       </i>Phương thức giao hàng</a><a href="#" class="nav-link flex-sm-fill text-sm-center disabled"> <i class="fa fa-money">                      </i>Phương thức thanh toán</a><a href="#" class="nav-link flex-sm-fill text-sm-center disabled"> <i class="fa fa-eye">                     </i>Xem lại đơn hàng</a></div>
-                  <div class="content py-3">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="box shipping-method">
-                          <h4>Giao hàng nhanh</h4>
-                          <p>Nhận hàng trong ngày tiếp theo.</p>
-                          <div class="box-footer text-center">
-                            <input type="radio" name="delivery" value="delivery1">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="box shipping-method">
-                          <h4>Giao hàng tiết kiệm</h4>
-                          <p>Nhận hàng trong vòng 4 ngày.</p>
-                          <div class="box-footer text-center">
-                            <input type="radio" name="delivery" value="delivery2">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="box shipping-method">
-                          <h4>Giao hàng thường</h4>
-                          <p>Nhận hàng trong vòng 7-15 ngày.</p>
-                          <div class="box-footer text-center">
-                            <input type="radio" name="delivery" value="delivery3">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="box-footer d-flex justify-content-between"><a href="checkout1.html" class="btn btn-outline-secondary"><i class="fa fa-chevron-left"></i>TRở về</a>
-                    <button type="submit" class="btn btn-primary">Tiếp tục đến phương thức thanh toán<i class="fa fa-chevron-right"></i></button>
-                  </div>
-                </form>
-              </div>
-              <!-- /.box-->
-            </div>
-            <!-- /.col-md-9-->
             <div class="col-lg-3">
-              <div id="order-summary" class="box">
-                <div class="box-header">
-                  <h3 class="mb-0">Tổng chi phí</h3>
+              <!--
+              *** PAGES MENU ***
+              _________________________________________________________
+              -->
+              <div class="card sidebar-menu mb-4">
+                <div class="card-header">
+                  <h3 class="h4 card-title">Pages</h3>
                 </div>
-                <p class="text-muted">Giao hàng, vận chuyển và thuế sẽ được tính thêm cho bạn.</p>
-                <div class="table-responsive">
-                  <table class="table">
-                    <tbody>
-                      <tr>
-                        <td>Tổng đặt hàng</td>
-                        <th>$446.00</th>
-                      </tr>
-                      <tr>
-                        <td>Vận chuyển và xử lý</td>
-                        <th>$10.00</th>
-                      </tr>
-                      <tr>
-                        <td>Thuế</td>
-                        <th>$0.00</th>
-                      </tr>
-                      <tr class="total">
-                        <td>Tổng cộng</td>
-                        <th>$456.00</th>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div class="card-body">
+                  <ul class="nav nav-pills flex-column">
+                    <li><a href="text.html" class="nav-link">Text page</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact page</a></li>
+                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                  </ul>
                 </div>
               </div>
-              <div class="box">
-                <div class="box-header">
-                  <h4 class="mb-0">Mã giảm giá</h4>
-                </div>
-                <p class="text-muted">Nhập mã giảm giá của riêng bạn tại đây.</p>
-                <form>
-                  <div class="input-group">
-                    <input type="text" class="form-control"><span class="input-group-append">
-                      <button type="button" class="btn btn-primary"><i class="fa fa-gift"></i></button></span>
+              <!-- *** PAGES MENU END ***-->
+              <div class="banner"><a href="#"><img src="img/banner.jpg" alt="sales 2014" class="img-fluid"></a></div>
+            </div>
+            <div class="col-lg-9">
+              <div id="text-page" class="box">
+                <h1>Text formatting - Header level 1</h1>
+                <p class="lead">This page aim is to show you the most common HTML elements appearance on the website. For further reference please visit official <a href="http://getbootstrap.com/css/" class="external">Bootstrap website</a>.</p>
+                <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+                <h2>Header Level 2</h2>
+                <ol>
+                  <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                  <li>Aliquam tincidunt mauris eu risus.</li>
+                </ol>
+                <blockquote class="blockquote">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+                </blockquote>
+                <h3>Header Level 3</h3>
+                <ul>
+                  <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                  <li>Aliquam tincidunt mauris eu risus.</li>
+                </ul>
+                <hr>
+                <h2>Images</h2>
+                <div class="row">
+                  <div class="col-md-4">
+                    <p class="text-center"><img src="img/detailsquare.jpg" alt="" class="img-circle img-fluid"></p>
+                    <p class="text-center">circle</p>
                   </div>
-                  <!-- /input-group-->
-                </form>
+                  <div class="col-md-4">
+                    <p class="text-center"><img src="img/detailsquare.jpg" alt="" class="img-thumbnail img-fluid"></p>
+                    <p class="text-center">thumbnail</p>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="text-center"><img src="img/detailsquare.jpg" alt="" class="rounded-circle img-fluid"></p>
+                    <p class="text-center">rounded</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <!-- /.col-md-3-->
+            <!-- /.col-lg-9-->
           </div>
         </div>
       </div>
