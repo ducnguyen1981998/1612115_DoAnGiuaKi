@@ -4,8 +4,8 @@ app.use(express.static("public"));
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
-
-app.listen(3000);
+var port= Number(process.env.PORT||5000);
+app.listen(port);
 
 app.get("/", function(request, response)  {
 
