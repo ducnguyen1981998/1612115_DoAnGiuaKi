@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>DShop-1612115</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-md ">
+        <a class="navbar-brand" href="#">DShop Admin</a>
+                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon fa fa-bars"></span>
+              </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault" style="border-top: 2px solid white">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Hello, Milos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 mb-4">
+                    <h1> <span class="fa fa-cog"></span> Dashboard <small></small></h1>
+                </div>
+                <div class="col-md-2">
+                    <div class="dropdown create">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create Content</button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item" type="button" data-toggle="modal" data-target="#addPage">Add Page</button>
+                            <button class="dropdown-item" type="button" data-toggle="modal" data-target="#addPost">Add Post</button>
+                            <button class="dropdown-item" type="button">Add User</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="active">Dashboard</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="/admin" class="list-group-item main-color-bg active"><span class="fa fa-cog"></span> Trang chủ</a>
+                        <a href="/useraccount" class="list-group-item"><span class="fa fa-file-text-o"></span> Tài khoản người dùng <span class="badge badge-secondary float-right mt-sm-1">9</span></a>
+                        <a href="/userprofile" class="list-group-item"><span class="fa fa-pencil"></span> Thông tin cá nhân  <span class="badge badge-secondary float-right mt-sm-1">27</span></a>
+                        <a href="/productadmin" class="list-group-item"><span class="fa fa-user-secret"></span> Bài viết <span class="badge badge-secondary float-right mt-sm-1">16</span></a>
+                        <a href="/ordersManagement" class="list-group-item"><span class="fa fa-user-secret"></span> Đơn hàng <span class="badge badge-secondary float-right mt-sm-1">16</span></a>
+                        <a href="/thongKeDoanhSo" class="list-group-item"><span class="fa fa-user-secret"></span> Thống kê doanh số <span class="badge badge-secondary float-right mt-sm-1">16</span></a>
+                        <a href="/thongKeSoLuong" class="list-group-item"><span class="fa fa-user-secret"></span> Thống kê số lượng <span class="badge badge-secondary float-right mt-sm-1">16</span></a>
+
+                    </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="page-wrapper">
+                                <!-- MAIN CONTENT-->
+                      <div class="main-content">
+                          <div class="section__content section__content--p30">
+                              <div class="container-fluid">
+                                  <div class="row">
+                                      <div class="col-lg-6">
+                                          <div class="au-card m-b-30">
+                                              <div class="au-card-inner">
+                                                  <h3 class="title-2 m-b-40">Doanh số theo năm</h3></h3>
+                                                  <canvas id="sales-chart"></canvas>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-lg-6">
+                                          <div class="au-card m-b-30">
+                                              <div class="au-card-inner">
+                                                  <h3 class="title-2 m-b-40">Doanh số theo tháng</h3>
+                                                  <canvas id="team-chart"></canvas>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-lg-6">
+                                          <div class="au-card m-b-30">
+                                              <div class="au-card-inner">
+                                                  <h3 class="title-2 m-b-40">doanh số trong tuần</h3>
+                                                  <canvas id="singelBarChart"></canvas>
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="col-lg-6">
+                                          <div class="au-card m-b-30">
+                                              <div class="au-card-inner">
+                                                  <h3 class="title-2 m-b-40">Doanh số trong ngày</h3>
+                                                  <canvas id="lineChart"></canvas>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- END MAIN CONTENT-->
+                  </div>
+                      <!-- END PAGE CONTAINER-->
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <footer id="footer">
+        <p>Copyright Surpeme Salvatore, &copy; 2017</p>
+    </footer>
+
+    <script>
+    CKEDITOR.replace('editor1');
+    </script>
+    <script>
+    CKEDITOR.replace('editor2');
+    </script>
+    <script src="https://cdn.ckeditor.com/[version.number]/[distribution]/ckeditor.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="javascript/bootstrap.bundle.min.js"></script>
+    <script src="javascript/bootstrap.min.js"></script>
+    <script src="javascript/main.js"></script>
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+
+
+</body>
+
+</html>
+<!-- end document-->
