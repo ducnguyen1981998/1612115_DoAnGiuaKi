@@ -1,0 +1,29 @@
+{
+  "name": "1612115_doangiuaki",
+  "version": "1.0.0",
+  "description": "1612115_doangiuaki",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "123"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ducnguyen1981998/1612115_DoAnGiuaKi.git"
+  },
+  "keywords": [
+    "123456"
+  ],
+  "author": "ducnguyen1981998",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ducnguyen1981998/1612115_DoAnGiuaKi/issues"
+  },
+  "homepage": "https://github.com/ducnguyen1981998/1612115_DoAnGiuaKi#readme",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  }
+}
