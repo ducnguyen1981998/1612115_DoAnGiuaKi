@@ -1,4 +1,5 @@
 var express = require("express");
+const pool = require('./model')
 var app = express();
 app.use(express.static("public"));
 
@@ -7,10 +8,34 @@ app.set("views", "./views");
 var port= Number(process.env.PORT||5000);
 app.listen(port);
 
-app.get("/", function(request, response)  {
+/* GET Trang chủ. */
+app.get('/', function(req, res, next) {
+	(async() => {
+        const client = await pool.connect();
+        // let error = req.flash('error');
+        try {
+            //QuanAo
+           const QuanAo= await client.query("SELECT * FROM public.quanao" );
+           const chuyendenam1= await client.query("SELECT * FROM public.chuyende WHERE ismale=true AND idchuyenmuc=1");
+           const chuyendenam2= await client.query("SELECT * FROM public.chuyende WHERE ismale=true AND idchuyenmuc=2");
+           const chuyendenam3= await client.query("SELECT * FROM public.chuyende WHERE ismale=true AND idchuyenmuc=3");
+           const slider= await client.query("SELECT * FROM public.banner" );
+           // console.log(QuanAo.row+"");
+           res.render('page/index',{
+                title: '1612074_1612115',
+                QuanAo: QuanAo.rows,
+                chuyendenam1: chuyendenam1.rows,
+                chuyendenam2: chuyendenam2.rows,
+                chuyendenam3: chuyendenam3.rows,
+                slider: slider.rows
+            });
 
-    response.render("page/index");
+        } finally {
+            client.release()
+        }
+    })().catch(e => console.log(e.stack))
 });
+
 
 app.get("/register", function(request, response)  {
 
@@ -50,9 +75,21 @@ app.get("/customer-wishlist", function(request, response)  {
 
     response.render("page/customer-wishlist");
 });
-app.get("/detail", function(request, response)  {
+/* GET Danh sach. */
+app.get('/detail/:idquanao', function(req, res, next) {
+    (async() => {
+        const client = await pool.connect();
+        // let error = req.flash('error');
+        try {
 
-    response.render("page/detail");
+            const result = await client.query("SELECT * FROM quanao WHERE idquanao="+req.params.idquanao);
+            res.render('page/detail',{
+                 result: result.rows,
+            });
+        } finally {
+            client.release()
+        }
+    })().catch(e => console.log(e.stack))
 });
 app.get("/checkout1", function(request, response)  {
 

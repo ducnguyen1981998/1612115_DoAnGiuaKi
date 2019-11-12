@@ -7,9 +7,27 @@ app.set("views", "./views");
 
 app.listen(3000);
 
-app.get("/", function(request, response)  {
+// app.get("/", function(request, response)  {
+//
+//     response.render("page/index");
+// });
 
-    response.render("page/index");
+/* GET Trang chủ. */
+app.get('/', function(req, res, next) {
+	(async() => {
+        const client = await pool.connect();
+        let error = req.flash('error');
+        try {
+            //QuanAo
+           const QuanAo= await client.query("SELECT * FROM QuanAo" )
+            res.render('pages/index',{
+                title: '1612069_1612074_1612115',
+                QuanAo:QuanAo.row
+            });
+        } finally {
+            client.release()
+        }
+    })().catch(e => console.log(e.stack))
 });
 
 app.get("/register", function(request, response)  {

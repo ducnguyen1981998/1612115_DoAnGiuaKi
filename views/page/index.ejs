@@ -94,29 +94,25 @@
                       <div class="col-md-6 col-lg-3">
                         <h5>Quần áo</h5>
                         <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="/category" class="nav-link">Áo thun</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Áo sơ mi</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Quần kaki</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Quần Short</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Khác</a></li>
+                          <% chuyendenam1.forEach(function (i){%>
+                                <li class="nav-item"><a href="/category" class="nav-link"><%= i.tenchuyende%></a></li>
+                          <%}) %>
                         </ul>
                       </div>
                       <div class="col-md-6 col-lg-3">
                         <h5>Giày </h5>
                         <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="/category" class="nav-link">Sneakers</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Sandals</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Giày đi bộ</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Dép bông</a></li>
+                          <% chuyendenam2.forEach(function (i){%>
+                                <li class="nav-item"><a href="/category" class="nav-link"><%= i.tenchuyende%></a></li>
+                          <%}) %>
                         </ul>
                       </div>
                       <div class="col-md-6 col-lg-3">
                         <h5>Khác</h5>
                         <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="/category" class="nav-link">Nón</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Dây nịch</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Cà vạt</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Kính</a></li>
+                          <% chuyendenam3.forEach(function (i){%>
+                                <li class="nav-item"><a href="/category" class="nav-link"><%= i.tenchuyende%></a></li>
+                          <%}) %>
 
                       </div>
                       <div class="col-md-6 col-lg-3">
@@ -126,12 +122,12 @@
                           <li class="nav-item"><a href="/category" class="nav-link">Dép tổ ong</a></li>
                           <li class="nav-item"><a href="/category" class="nav-link">Balo-Phụ kiện</a></li>
                         </ul>
-                        <h5>Tìm kiếm và xu hướng</h5>
+                        <!-- <h5>Tìm kiếm và xu hướng</h5>
                         <ul class="list-unstyled mb-3">
                           <li class="nav-item"><a href="/category" class="nav-link">Đồ lót</a></li>
                           <li class="nav-item"><a href="/category" class="nav-link">Đồ đôi</a></li>
                           <li class="nav-item"><a href="/category" class="nav-link">Trang sức</a></li>
-                        </ul>
+                        </ul> -->
                       </div>
                     </div>
                   </li>
@@ -144,39 +140,29 @@
                       <div class="col-md-6 col-lg-3">
                         <h5>Quần áo</h5>
                         <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="/category" class="nav-link">Áo thun</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Áo sơ mi</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Quần kaki</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Áo khoác</a></li>
+                          <% chuyendenam1.forEach(function (i){%>
+                                <li class="nav-item"><a href="/category" class="nav-link"><%= i.tenchuyende%></a></li>
+                          <%}) %>
                         </ul>
                       </div>
                       <div class="col-md-6 col-lg-3">
-                        <h5>Giày</h5>
+                        <h5>Giày </h5>
                         <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="/category" class="nav-link">Giày cao gót</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Sandals</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Giày chạy bộ</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Bốt</a></li>
+                          <% chuyendenam2.forEach(function (i){%>
+                                <li class="nav-item"><a href="/category" class="nav-link"><%= i.tenchuyende%></a></li>
+                          <%}) %>
                         </ul>
                       </div>
                       <div class="col-md-6 col-lg-3">
                         <h5>Khác</h5>
                         <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="/category" class="nav-link">Đồng hồ</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Túi xách</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Đồ trang sức</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Casual</a></li>
-
-                        <h5>Tìm kiếm và xu hướng</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="/category" class="nav-link">Đồ trang sức</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Làm đẹp</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Giày Bitis</a></li>
-                        </ul>
+                          <% chuyendenam3.forEach(function (i){%>
+                                <li class="nav-item"><a href="/category" class="nav-link"><%= i.tenchuyende%></a></li>
+                          <%}) %>
                       </div>
                       <div class="col-md-6 col-lg-3">
                         <div class="banner"><a href="#"><img src="img/banner.jpg" alt="" class="img img-fluid"></a></div>
-                        <div class="banner"><a href="#"><img src="img/banner2.jpg" alt="" class="img img-fluid"></a></div>
+
                       </div>
                     </div>
                   </li>
@@ -258,10 +244,11 @@
           <div class="row">
             <div class="col-md-12">
               <div id="main-slider" class="owl-carousel owl-theme">
-                <div class="item"><img src="img/main-slider1.jpg" alt="" class="img-fluid"></div>
-                <div class="item"><img src="img/main-slider2.jpg" alt="" class="img-fluid"></div>
-                <div class="item"><img src="img/main-slider3.jpg" alt="" class="img-fluid"></div>
-                <div class="item"><img src="img/main-slider4.jpg" alt="" class="img-fluid"></div>
+                <% slider.forEach(function (i){%>
+                      <div class="item"><img src="<%= i.anhslider%>" alt="" class="img-fluid"></div>
+                <%}) %>
+
+
               </div>
               <!-- /#main-slider-->
             </div>
@@ -318,23 +305,24 @@
           </div>
           <div class="container">
             <div class="product-slider owl-carousel owl-theme">
+              <% QuanAo.forEach(function (i){%>
               <div class="item">
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">
-                      <div class="front"><a href="/detail"><img src="img/product1.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="/detail"><img src="img/product1_2.jpg" alt="" class="img-fluid"></a></div>
+                        <div class="front"><a href="/detail/<%= i.idquanao%>"><img src="<%= i.anhquan%>" alt="" class="img-fluid"></a></div>
+                      <div class="back"><a href="/detail/<%= i.idquanao%>"><img src="<%= i.anhsauquanao%>" alt="" class="img-fluid"></a></div>
                     </div>
-                  </div><a href="/detail" class="invisible"><img src="img/product1.jpg" alt="" class="img-fluid"></a>
+                  </div><a href="/detail/<%= i.idquanao%>" class="invisible"><img src="<%= i.anhsauquanao%>" alt="" class="img-fluid"></a>
                   <div class="text">
-                    <h3><a href="/detail">Fur coat with very but very very long name</a></h3>
+                    <h3><a href="/detail/<%= i.idquanao%>"><%= i.tenquanao%></a></h3>
                     <p class="price">
-                      <del>$280</del>$143.00
+                      <del><%= i.gia%></del> <%= i.gia*(100-i.giamgia)/100%>
                     </p>
                   </div>
                   <!-- /.text-->
                   <div class="ribbon sale">
-                    <div class="theribbon">-20%</div>
+                    <div class="theribbon">-<%= i.giamgia%>%</div>
                     <div class="ribbon-background"></div>
                   </div>
                   <!-- /.ribbon-->
@@ -351,172 +339,7 @@
                 </div>
                 <!-- /.product-->
               </div>
-              <div class="item">
-                <div class="product">
-                  <div class="flip-container">
-                    <div class="flipper">
-                      <div class="front"><a href="/detail"><img src="img/product2.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="/detail"><img src="img/product2_2.jpg" alt="" class="img-fluid"></a></div>
-                    </div>
-                  </div><a href="/detail" class="invisible"><img src="img/product2.jpg" alt="" class="img-fluid"></a>
-                  <div class="text">
-                    <h3><a href="/detail">White Blouse Armani</a></h3>
-                    <p class="price">
-                      <del>$280</del>$143.00
-                    </p>
-                  </div>
-                  <!-- /.text-->
-                  <div class="ribbon sale">
-                    <div class="theribbon">-30%</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <!-- /.ribbon-->
-                  <div class="ribbon new">
-                    <div class="theribbon">NEW</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <!-- /.ribbon-->
-                  <div class="ribbon gift">
-                    <div class="theribbon">GIFT</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <!-- /.ribbon-->
-                </div>
-                <!-- /.product-->
-              </div>
-              <div class="item">
-                <div class="product">
-                  <div class="flip-container">
-                    <div class="flipper">
-                      <div class="front"><a href="/detail"><img src="img/product3.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="/detail"><img src="img/product3_2.jpg" alt="" class="img-fluid"></a></div>
-                    </div>
-                  </div><a href="/detail" class="invisible"><img src="img/product3.jpg" alt="" class="img-fluid"></a>
-                  <div class="text">
-                    <h3><a href="/detail">Black Blouse Versace</a></h3>
-                    <p class="price">
-                      <del></del>$143.00
-                    </p>
-                  </div>
-                  <!-- /.text-->
-                </div>
-                <!-- /.product-->
-              </div>
-              <div class="item">
-                <div class="product">
-                  <div class="flip-container">
-                    <div class="flipper">
-                      <div class="front"><a href="/detail"><img src="img/product3.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="/detail"><img src="img/product3_2.jpg" alt="" class="img-fluid"></a></div>
-                    </div>
-                  </div><a href="/detail" class="invisible"><img src="img/product3.jpg" alt="" class="img-fluid"></a>
-                  <div class="text">
-                    <h3><a href="/detail">Black Blouse Versace</a></h3>
-                    <p class="price">
-                      <del></del>$143.00
-                    </p>
-                  </div>
-                  <!-- /.text-->
-                </div>
-                <!-- /.product-->
-              </div>
-              <div class="item">
-                <div class="product">
-                  <div class="flip-container">
-                    <div class="flipper">
-                      <div class="front"><a href="/detail"><img src="img/product2.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="/detail"><img src="img/product2_2.jpg" alt="" class="img-fluid"></a></div>
-                    </div>
-                  </div><a href="/detail" class="invisible"><img src="img/product2.jpg" alt="" class="img-fluid"></a>
-                  <div class="text">
-                    <h3><a href="/detail">White Blouse Versace</a></h3>
-                    <p class="price">
-                      <del></del>$143.00
-                    </p>
-                  </div>
-                  <!-- /.text-->
-                  <div class="ribbon new">
-                    <div class="theribbon">NEW</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <!-- /.ribbon-->
-                </div>
-                <!-- /.product-->
-              </div>
-              <div class="item">
-                <div class="product">
-                  <div class="flip-container">
-                    <div class="flipper">
-                      <div class="front"><a href="/detail"><img src="img/product1.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="/detail"><img src="img/product1_2.jpg" alt="" class="img-fluid"></a></div>
-                    </div>
-                  </div><a href="/detail" class="invisible"><img src="img/product1.jpg" alt="" class="img-fluid"></a>
-                  <div class="text">
-                    <h3><a href="/detail">Fur coat</a></h3>
-                    <p class="price">
-                      <del></del>$143.00
-                    </p>
-                  </div>
-                  <!-- /.text-->
-                  <div class="ribbon gift">
-                    <div class="theribbon">GIFT</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <!-- /.ribbon-->
-                </div>
-                <!-- /.product-->
-              </div>
-              <div class="item">
-                <div class="product">
-                  <div class="flip-container">
-                    <div class="flipper">
-                      <div class="front"><a href="/detail"><img src="img/product2.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="/detail"><img src="img/product2_2.jpg" alt="" class="img-fluid"></a></div>
-                    </div>
-                  </div><a href="/detail" class="invisible"><img src="img/product2.jpg" alt="" class="img-fluid"></a>
-                  <div class="text">
-                    <h3><a href="/detail">White Blouse Armani</a></h3>
-                    <p class="price">
-                      <del>$280</del>$143.00
-                    </p>
-                  </div>
-                  <!-- /.text-->
-                  <div class="ribbon sale">
-                    <div class="theribbon">SALE</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <!-- /.ribbon-->
-                  <div class="ribbon new">
-                    <div class="theribbon">NEW</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <!-- /.ribbon-->
-                  <div class="ribbon gift">
-                    <div class="theribbon">GIFT</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <!-- /.ribbon-->
-                </div>
-                <!-- /.product-->
-              </div>
-              <div class="item">
-                <div class="product">
-                  <div class="flip-container">
-                    <div class="flipper">
-                      <div class="front"><a href="/detail"><img src="img/product3.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="/detail"><img src="img/product3_2.jpg" alt="" class="img-fluid"></a></div>
-                    </div>
-                  </div><a href="/detail" class="invisible"><img src="img/product3.jpg" alt="" class="img-fluid"></a>
-                  <div class="text">
-                    <h3><a href="/detail">Black Blouse Versace</a></h3>
-                    <p class="price">
-                      <del></del>$143.00
-                    </p>
-                  </div>
-                  <!-- /.text-->
-                </div>
-                <!-- /.product-->
-              </div>
+              <%}) %>
               <!-- /.product-slider-->
             </div>
             <!-- /.container-->
