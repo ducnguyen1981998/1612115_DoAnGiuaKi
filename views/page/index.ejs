@@ -82,92 +82,16 @@
         <div class="container"><a href="/" class="navbar-brand home"><img src="img/logo.png" alt="Obaju logo" class="d-none d-md-inline-block"><img src="img/logo-small.png" alt="Obaju logo" class="d-inline-block d-md-none"><span class="sr-only">DShop - go to homepage</span></a>
           <div class="navbar-buttons">
             <button type="button" data-toggle="collapse" data-target="#navigation" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
-            <button type="button" data-toggle="collapse" data-target="#search" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></button><a href="/basket" class="btn btn-outline-secondary navbar-toggler"><i class="fa fa-shopping-cart"></i></a>
+            <button type="button" data-toggle="collapse" data-target="#search" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></button><a href="basket.html" class="btn btn-outline-secondary navbar-toggler"><i class="fa fa-shopping-cart"></i></a>
           </div>
           <div id="navigation" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item"><a href="#" class="nav-link active">Trang chủ</a></li>
-              <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Nam<b class="caret"></b></a>
-                <ul class="dropdown-menu megamenu">
-                  <li>
-                    <div class="row">
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Quần áo</h5>
-                        <ul class="list-unstyled mb-3">
-                          <% chuyendenam1.forEach(function (i){%>
-                                <li class="nav-item"><a href="/category" class="nav-link"><%= i.tenchuyende%></a></li>
-                          <%}) %>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Giày </h5>
-                        <ul class="list-unstyled mb-3">
-                          <% chuyendenam2.forEach(function (i){%>
-                                <li class="nav-item"><a href="/category" class="nav-link"><%= i.tenchuyende%></a></li>
-                          <%}) %>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Khác</h5>
-                        <ul class="list-unstyled mb-3">
-                          <% chuyendenam3.forEach(function (i){%>
-                                <li class="nav-item"><a href="/category" class="nav-link"><%= i.tenchuyende%></a></li>
-                          <%}) %>
+              <li class="nav-item"><a href="#" class="nav-link ">Trang chủ</a></li>
+              <li class="nav-item"><a href="/category/1" class="nav-link ">NAM</a></li>
+              <li class="nav-item"><a href="/category" class="nav-link ">NỮ</a></li>
+              <li class="nav-item"><a href="/category" class="nav-link ">TRẺ EM</a></li>
 
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Nổi bật</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="/category" class="nav-link">Giày Bitis </a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Dép tổ ong</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Balo-Phụ kiện</a></li>
-                        </ul>
-                        <!-- <h5>Tìm kiếm và xu hướng</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="/category" class="nav-link">Đồ lót</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Đồ đôi</a></li>
-                          <li class="nav-item"><a href="/category" class="nav-link">Trang sức</a></li>
-                        </ul> -->
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Nữ<b class="caret"></b></a>
-                <ul class="dropdown-menu megamenu">
-                  <li>
-                    <div class="row">
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Quần áo</h5>
-                        <ul class="list-unstyled mb-3">
-                          <% chuyendenam1.forEach(function (i){%>
-                                <li class="nav-item"><a href="/category" class="nav-link"><%= i.tenchuyende%></a></li>
-                          <%}) %>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Giày </h5>
-                        <ul class="list-unstyled mb-3">
-                          <% chuyendenam2.forEach(function (i){%>
-                                <li class="nav-item"><a href="/category" class="nav-link"><%= i.tenchuyende%></a></li>
-                          <%}) %>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Khác</h5>
-                        <ul class="list-unstyled mb-3">
-                          <% chuyendenam3.forEach(function (i){%>
-                                <li class="nav-item"><a href="/category" class="nav-link"><%= i.tenchuyende%></a></li>
-                          <%}) %>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <div class="banner"><a href="#"><img src="img/banner.jpg" alt="" class="img img-fluid"></a></div>
 
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
               <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Template<b class="caret"></b></a>
                 <ul class="dropdown-menu megamenu">
                   <li>
@@ -205,11 +129,13 @@
                       <div class="col-md-6 col-lg-3">
                         <h5>Trang và Blog khác</h5>
                         <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="/admin" class="nav-link">Admin</a></li>
-                          <li class="nav-item"><a href="/useraccount" class="nav-link">Quan ly tai khoan</a></li>
-                          <li class="nav-item"><a href="/userprofile" class="nav-link">Quan ly thong tin ca nhan/a></li>
-                            <li class="nav-item"><a href="/productadmin" class="nav-link">Quan ly san pham</a></li>
-                            <li class="nav-item"><a href="/thongKeDoanhSo" class="nav-link">Thong ke doanh so</a></li>
+                          <li class="nav-item"><a href="/blog" class="nav-link">Danh sách Blog</a></li>
+                          <li class="nav-item"><a href="/post" class="nav-link">Blog-Chi tiết bài viết</a></li>
+                          <li class="nav-item"><a href="/faq" class="nav-link">FAQ</a></li>
+                         <!--  <li class="nav-item"><a href="text.html" class="nav-link">Text page</a></li>
+                          <li class="nav-item"><a href="text-right.html" class="nav-link">Text page - right sidebar</a></li> -->
+                          <li class="nav-item"><a href="/404" class="nav-link">Trang 404 </a></li>
+                          <li class="nav-item"><a href="/contact" class="nav-link">Liên hệ</a></li>
                         </ul>
                       </div>
                     </div>
@@ -310,7 +236,7 @@
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">
-                        <div class="front"><a href="/detail/<%= i.idquanao%>"><img src="<%= i.anhquan%>" alt="" class="img-fluid"></a></div>
+                        <div class="front"><a href="/detail/<%=i.idquanao%>"><img src="<%= i.anhquanao%>" alt="" class="img-fluid"></a></div>
                       <div class="back"><a href="/detail/<%= i.idquanao%>"><img src="<%= i.anhsauquanao%>" alt="" class="img-fluid"></a></div>
                     </div>
                   </div><a href="/detail/<%= i.idquanao%>" class="invisible"><img src="<%= i.anhsauquanao%>" alt="" class="img-fluid"></a>
