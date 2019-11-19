@@ -50,7 +50,7 @@ app.get('/category/:id', function(req, res, next) {
 						const DanhMucNam= await client.query("SELECT * FROM public.danhmuc where doituong=1");
 						const DanhMucNu= await client.query("SELECT * FROM public.danhmuc where doituong=2");
 						const DanhMucTreEm= await client.query("SELECT * FROM public.danhmuc where doituong=3");
-            const QuanAo= await client.query("SELECT * FROM public.quanao order by random() limit 6" );
+            const QuanAo= await client.query("SELECT * FROM public.quanao INNER JOIN public.danhmuc ON danhmuc=iddanhmuc WHERE doituong="+ req.params.id+" order by random() limit 6" );
 
            res.render('page/category',{
                 title: '1612074_1612115',
@@ -75,8 +75,8 @@ app.get('/category/:doituong/:iddanhmuc', function(req, res, next) {
 						const DanhMucNam= await client.query("SELECT * FROM public.danhmuc where doituong=1");
 						const DanhMucNu= await client.query("SELECT * FROM public.danhmuc where doituong=2");
 						const DanhMucTreEm= await client.query("SELECT * FROM public.danhmuc where doituong=3");
-						const QuanAo= await client.query("SELECT * FROM public.quanao order by random() limit 6" );
-          //  const QuanAo= await client.query("SELECT * FROM quanao INNER JOIN danhmuc ON danhmuc= iddanhmuc  WHERE danhmuc.doituong="+ req.params.doituong+ "AND danhmuc.iddanhmuc="+req.params.iddanhmuc+ " order by random() limit 6" );
+					//	const QuanAo= await client.query("SELECT * FROM public.quanao order by random() limit 6" );
+           	const QuanAo= await client.query("SELECT * FROM quanao INNER JOIN danhmuc ON danhmuc= iddanhmuc  WHERE danhmuc.doituong="+ req.params.doituong+ "AND danhmuc.iddanhmuc="+req.params.iddanhmuc+ " order by random() limit 6" );
 
            res.render('page/category',{
                 title: '1612074_1612115',
@@ -98,10 +98,15 @@ app.get('/detail/:idquanao', function(req, res, next) {
         const client = await pool.connect();
         // let error = req.flash('error');
         try {
-
+						const DanhMucNam= await client.query("SELECT * FROM public.danhmuc where doituong=1");
+						const DanhMucNu= await client.query("SELECT * FROM public.danhmuc where doituong=2");
+						const DanhMucTreEm= await client.query("SELECT * FROM public.danhmuc where doituong=3");
             const result = await client.query("SELECT * FROM quanao WHERE idquanao="+req.params.idquanao);
             res.render('page/detail',{
                  result: result.rows,
+								 DanhMucNam:DanhMucNam.rows,
+ 								DanhMucNu:DanhMucNu.rows,
+ 								DanhMucTreEm:DanhMucTreEm.rows
             });
         } finally {
             client.release()
