@@ -26,6 +26,7 @@ app.get('/', function(req, res, next) {
            // const chuyendenam3= await client.query("SELECT * FROM public.danhmuc WHERE doituong=3 AND idchuyenmuc=3");
            const slider= await client.query("SELECT * FROM public.banner" );
            // console.log(QuanAo.row+"");
+           console.log(QuanAo.rows[0].tenquanao);
            res.render('page/index',{
                 title: '1612074_1612115',
                 QuanAo: QuanAo.rows,
