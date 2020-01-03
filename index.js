@@ -49,7 +49,7 @@ app.get("/category/:id", function(req, res, next) {
         "SELECT * FROM public.danhmuc where doituong=1"
       );
       const TongDanhMucNam = await client.query(
-        `SELECT COUNT(*) 
+        `SELECT COUNT(*) as SoLuong
         FROM public.quanao JOIN public.danhmuc
         ON quanao.danhmuc = danhmuc.iddanhmuc
         where doituong=1 and danhmuc=1`
@@ -66,6 +66,8 @@ app.get("/category/:id", function(req, res, next) {
           req.params.id +
           " order by random() limit 6"
       );
+      console.log(TongDanhMucNam.rows);
+      
       res.render("page/category", {
         title: "1612074_1612115",
         QuanAo: QuanAo.rows,
@@ -75,6 +77,7 @@ app.get("/category/:id", function(req, res, next) {
         DanhMucTreEm: DanhMucTreEm.rows
         
       });
+
     } finally {
         
       client.release();
@@ -89,6 +92,12 @@ app.get("/category/:doituong/:iddanhmuc", function(req, res, next) {
     try {
       const DanhMucNam = await client.query(
         "SELECT * FROM public.danhmuc where doituong=1"
+      );
+      const TongDanhMucNam = await client.query(
+        `SELECT COUNT(*) as SoLuong
+        FROM public.quanao JOIN public.danhmuc
+        ON quanao.danhmuc = danhmuc.iddanhmuc
+        where doituong=1 and danhmuc=1`
       );
       const DanhMucNu = await client.query(
         "SELECT * FROM public.danhmuc where doituong=2"
@@ -109,6 +118,7 @@ app.get("/category/:doituong/:iddanhmuc", function(req, res, next) {
         title: "1612074_1612115",
         QuanAo: QuanAo.rows,
         DanhMucNam: DanhMucNam.rows,
+        TongDanhMucNam: TongDanhMucNam.rows,
         DanhMucNu: DanhMucNu.rows,
         DanhMucTreEm: DanhMucTreEm.rows
       });

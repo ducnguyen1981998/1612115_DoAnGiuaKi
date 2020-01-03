@@ -194,8 +194,6 @@
               <li class="nav-item">
                 <a href="/category" class="nav-link ">TRẺ EM</a>
               </li>
-
-
             </ul>
             <div class="navbar-buttons d-flex justify-content-end">
               <!-- /.nav-collapse-->
@@ -247,7 +245,9 @@
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                  <li aria-current="page" class="breadcrumb-item active">Nam</li>
+                  <li aria-current="page" class="breadcrumb-item active">
+                    Nam
+                  </li>
                 </ol>
               </nav>
             </div>
@@ -264,7 +264,11 @@
                   <ul class="nav nav-pills flex-column category-menu">
                     <li>
                       <a href="/category/1" class="nav-link active"
-                        >Nam <span class="badge badge-light">12 </span></a
+                        >Nam
+                        <span class="badge badge-light"
+                          ><% TongDanhMucNam.forEach(function (i){%> <%=
+                          i.soluong%> <%}) %></span
+                        ></a
                       >
                       <ul class="list-unstyled">
                         <% DanhMucNam.forEach(function (i){%>
@@ -388,7 +392,7 @@
               <!-- *** MENUS AND FILTERS END ***-->
               <div class="banner">
                 <a href="#"
-                  ><img src="img/banner.jpg" alt="sales 2014" class="img-fluid"
+                  ><img src="/banner1.jpg" alt="sales 2014" class="img-fluid"
                 /></a>
               </div>
             </div>
@@ -467,7 +471,8 @@
                         <a href="/detail/<%= i.idquanao%>"><%= i.tenquanao%></a>
                       </h3>
                       <p class="price">
-                        <del><%= i.gia%> đ <br/></del><%= i.gia*(100-i.giamgia)/100%>
+                        <del><%= i.gia%> đ <br /></del><%=
+                        i.gia*(100-i.giamgia)/100%>
                       </p>
                       <p class="buttons">
                         <a href="/detail" class="btn btn-outline-secondary"
