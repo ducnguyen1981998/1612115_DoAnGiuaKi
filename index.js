@@ -48,6 +48,13 @@ app.get("/category/:id", function(req, res, next) {
       const DanhMucNam = await client.query(
         "SELECT * FROM public.danhmuc where doituong=1"
       );
+      const TongDanhMucNam = await client.query(
+        `SELECT COUNT(*) 
+        FROM public.quanao JOIN public.danhmuc
+        ON quanao.danhmuc = danhmuc.iddanhmuc
+        where doituong=1 and danhmuc=1`
+      );
+
       const DanhMucNu = await client.query(
         "SELECT * FROM public.danhmuc where doituong=2"
       );
@@ -59,15 +66,17 @@ app.get("/category/:id", function(req, res, next) {
           req.params.id +
           " order by random() limit 6"
       );
-
       res.render("page/category", {
         title: "1612074_1612115",
         QuanAo: QuanAo.rows,
         DanhMucNam: DanhMucNam.rows,
+        TongDanhMucNam: TongDanhMucNam.rows,
         DanhMucNu: DanhMucNu.rows,
         DanhMucTreEm: DanhMucTreEm.rows
+        
       });
     } finally {
+        
       client.release();
     }
   })().catch(e => console.log(e.stack));
