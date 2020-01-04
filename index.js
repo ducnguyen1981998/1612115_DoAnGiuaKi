@@ -19,18 +19,11 @@ app.get("/", function(req, res, next) {
     try {
       //QuanAo
       const QuanAo = await client.query("SELECT * FROM public.quanao");
-      // const chuyendenam1= await client.query("SELECT * FROM public.danhmuc WHERE doituong=1 AND idchuyenmuc=1");
-      // const chuyendenam2= await client.query("SELECT * FROM public.danhmuc WHERE doituong=2 AND idchuyenmuc=2");
-      // const chuyendenam3= await client.query("SELECT * FROM public.danhmuc WHERE doituong=3 AND idchuyenmuc=3");
       const slider = await client.query("SELECT * FROM public.banner");
-      // console.log(QuanAo.row+"");
       console.log(QuanAo.rows[0].tenquanao);
       res.render("page/index", {
         title: "1612074_1612115",
         QuanAo: QuanAo.rows,
-        // chuyendenam1: chuyendenam1.rows,
-        // chuyendenam2: chuyendenam2.rows,
-        // chuyendenam3: chuyendenam3.rows,
         slider: slider.rows
       });
     } finally {
@@ -52,21 +45,32 @@ app.get("/category/:id", function(req, res, next) {
         `SELECT COUNT(*) as SoLuong
         FROM public.quanao JOIN public.danhmuc
         ON quanao.danhmuc = danhmuc.iddanhmuc
-        where doituong=1 and danhmuc=1`
+        where doituong=1`
       );
 
       const DanhMucNu = await client.query(
         "SELECT * FROM public.danhmuc where doituong=2"
       );
+      const TongDanhMucNu = await client.query(
+        `SELECT COUNT(*) as SoLuong
+        FROM public.quanao JOIN public.danhmuc
+        ON quanao.danhmuc = danhmuc.iddanhmuc
+        where doituong=2`
+      );
       const DanhMucTreEm = await client.query(
         "SELECT * FROM public.danhmuc where doituong=3"
       );
+      const TongDanhMucTreEm = await client.query(
+        `SELECT COUNT(*) as SoLuong
+        FROM public.quanao JOIN public.danhmuc
+        ON quanao.danhmuc = danhmuc.iddanhmuc
+        where doituong=3`
+      );
       const QuanAo = await client.query(
         "SELECT * FROM public.quanao INNER JOIN public.danhmuc ON danhmuc=iddanhmuc WHERE doituong=" +
-          req.params.id +
-          " order by random() limit 6"
+          req.params.id +"ORDER BY quanao.gia ASC"
       );
-      console.log(TongDanhMucNam.rows);
+   
       
       res.render("page/category", {
         title: "1612074_1612115",
@@ -74,7 +78,9 @@ app.get("/category/:id", function(req, res, next) {
         DanhMucNam: DanhMucNam.rows,
         TongDanhMucNam: TongDanhMucNam.rows,
         DanhMucNu: DanhMucNu.rows,
-        DanhMucTreEm: DanhMucTreEm.rows
+        TongDanhMucNu: TongDanhMucNu.rows,
+        DanhMucTreEm: DanhMucTreEm.rows,
+        TongDanhMucTreEm: TongDanhMucTreEm.rows,
         
       });
 
@@ -102,16 +108,27 @@ app.get("/category/:doituong/:iddanhmuc", function(req, res, next) {
       const DanhMucNu = await client.query(
         "SELECT * FROM public.danhmuc where doituong=2"
       );
+      const TongDanhMucNu = await client.query(
+        `SELECT COUNT(*) as SoLuong
+        FROM public.quanao JOIN public.danhmuc
+        ON quanao.danhmuc = danhmuc.iddanhmuc
+        where doituong=2`
+      );
       const DanhMucTreEm = await client.query(
         "SELECT * FROM public.danhmuc where doituong=3"
+      );
+      const TongDanhMucTreEm = await client.query(
+        `SELECT COUNT(*) as SoLuong
+        FROM public.quanao JOIN public.danhmuc
+        ON quanao.danhmuc = danhmuc.iddanhmuc
+        where doituong=3`
       );
       //	const QuanAo= await client.query("SELECT * FROM public.quanao order by random() limit 6" );
       const QuanAo = await client.query(
         "SELECT * FROM quanao INNER JOIN danhmuc ON danhmuc= iddanhmuc  WHERE danhmuc.doituong=" +
           req.params.doituong +
           "AND danhmuc.iddanhmuc=" +
-          req.params.iddanhmuc +
-          " order by random() limit 6"
+          req.params.iddanhmuc
       );
 
       res.render("page/category", {
@@ -120,7 +137,9 @@ app.get("/category/:doituong/:iddanhmuc", function(req, res, next) {
         DanhMucNam: DanhMucNam.rows,
         TongDanhMucNam: TongDanhMucNam.rows,
         DanhMucNu: DanhMucNu.rows,
-        DanhMucTreEm: DanhMucTreEm.rows
+        TongDanhMucNu: TongDanhMucNu.rows,
+        DanhMucTreEm: DanhMucTreEm.rows,
+        TongDanhMucTreEm: TongDanhMucTreEm.rows,
       });
     } finally {
       client.release();

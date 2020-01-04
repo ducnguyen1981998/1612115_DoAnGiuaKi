@@ -189,10 +189,10 @@
                 <a href="/category/1" class="nav-link ">NAM</a>
               </li>
               <li class="nav-item">
-                <a href="/category" class="nav-link ">NỮ</a>
+                <a href="/category/2" class="nav-link ">NỮ</a>
               </li>
               <li class="nav-item">
-                <a href="/category" class="nav-link ">TRẺ EM</a>
+                <a href="/category/3" class="nav-link ">TRẺ EM</a>
               </li>
             </ul>
             <div class="navbar-buttons d-flex justify-content-end">
@@ -242,14 +242,14 @@
           <div class="row">
             <div class="col-lg-12">
               <!-- breadcrumb-->
-              <nav aria-label="breadcrumb">
+              <!-- <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
                   <li aria-current="page" class="breadcrumb-item active">
                     Nam
                   </li>
                 </ol>
-              </nav>
+              </nav> -->
             </div>
             <div class="col-lg-3">
               <!--
@@ -284,7 +284,8 @@
                     </li>
                     <li>
                       <a href="/category/2" class="nav-link active"
-                        >Nữ <span class="badge badge-light">15</span></a
+                        >Nữ <span class="badge badge-light"><% TongDanhMucNu.forEach(function (i){%> <%=
+                          i.soluong%> <%}) %></span></a
                       >
                       <ul class="list-unstyled">
                         <% DanhMucNu.forEach(function (i){%>
@@ -300,7 +301,8 @@
                     </li>
                     <li>
                       <a href="/category/3" class="nav-link active"
-                        >Trẻ em <span class="badge badge-light">24</span></a
+                        >Trẻ em <span class="badge badge-light"><% TongDanhMucTreEm.forEach(function (i){%> <%=
+                          i.soluong%> <%}) %></span></a
                       >
                       <ul class="list-unstyled">
                         <% DanhMucTreEm.forEach(function (i){%>
@@ -397,13 +399,13 @@
               </div>
             </div>
             <div class="col-lg-9">
-              <div class="box">
+              <!-- <div class="box">
                 <h1>Nam</h1>
                 <p>
                   Chúng tôi cung cấp nhiều lựa chọn các sản phẩm tốt nhất mà
                   chúng tôi đã tìm thấy và lựa chọn cẩn thận trên toàn thế giới.
                 </p>
-              </div>
+              </div> -->
               <div class="box info-bar">
                 <div class="row">
                   <!-- <div class="col-md-12 col-lg-4 products-showing">
@@ -425,10 +427,12 @@
                       <div class="products-sort-by mt-2 mt-lg-0">
                         <strong>Sắp xếp</strong>
                         <select name="sort-by" class="form-control">
-                          <option>Giá</option>
-                          <option>Tên</option>
+                          <option>Giá: từ thấp đến cao</option>
+                          <option>Giá: từ cao đến thấp</option>
+                          <option>Tên: A-Z</option>
+                          <option>Tên: Z-A</option>
                           <option>Giảm giá</option>
-                          <option>Mới</option>
+                          <option>Mới nhất</option>
                           <option>Quà tặng</option>
                         </select>
                       </div>
@@ -436,9 +440,9 @@
                   </div>
                 </div>
               </div>
-              <div class="row products">
+              <div class="row products" id="rowproducts" >
                 <% QuanAo.forEach(function (i){%>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 " style="display: none;" id="pro" >
                   <div class="product">
                     <div class="flip-container">
                       <div class="flipper">
@@ -471,8 +475,18 @@
                         <a href="/detail/<%= i.idquanao%>"><%= i.tenquanao%></a>
                       </h3>
                       <p class="price">
-                        <del><%= i.gia%> đ <br /></del><%=
-                        i.gia*(100-i.giamgia)/100%>
+                        <% if (i.giamgia>0) { %>
+                          <del><%= i.gia %> ₫</del>
+                          <strong
+                            style="color:red; font-weight: 700;font-size: x-large;"
+                            ><%= i.gia*(100-i.giamgia)/100%> ₫</strong
+                          >
+    
+                          <% } else { %>
+    
+                          <strong><%= i.gia*(100-i.giamgia)/100%> ₫</strong>
+    
+                          <% } %>
                       </p>
                       <p class="buttons">
                         <a href="/detail" class="btn btn-outline-secondary"
@@ -524,9 +538,9 @@
 
                 <!-- /.products-->
               </div>
-              <div class="pages">
-                <p class="loadMore">
-                  <a href="#" class="btn btn-primary btn-lg"
+              <div class="pages" >
+                <p class="loadMore" >
+                  <a class="btn btn-primary btn-lg" onclick="loadMoreClick()"
                     ><i class="fa fa-chevron-down"></i> Tải thêm</a
                   >
                 </p>
@@ -698,5 +712,9 @@
     <script src="/vendor/owl.carousel/owl.carousel.min.js"></script>
     <script src="/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
     <script src="/js/front.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="load-more-button.js"></script>
   </body>
 </html>
