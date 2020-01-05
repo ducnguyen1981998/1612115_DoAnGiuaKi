@@ -224,10 +224,8 @@ $( ".form-control" )
         })
       }
       else if($( this ).text() === "Giá: từ cao đến thấp"){
-        $("#rowproducts").find(".col-lg-4").sort(function(a,b){
-            return parseInt($(a).find("strong").text())<parseInt($(b).find("strong").text())
-            // console.log(parseInt($(a).attr(".price"), 10))           
-        })
+        // var path=$(location).attr('href')+"/sortnamedown"
+        // $(location).attr('href', path)
       }
     });
     

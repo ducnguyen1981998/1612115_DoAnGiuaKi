@@ -68,8 +68,12 @@ app.get("/category/:id", function(req, res, next) {
       );
       const QuanAo = await client.query(
         "SELECT * FROM public.quanao INNER JOIN public.danhmuc ON danhmuc=iddanhmuc WHERE doituong=" +
-          req.params.id +"ORDER BY quanao.gia ASC"
+          req.params.id +"ORDER BY public.quanao.gia ASC"
       );
+      // const QuanAo2 = await client.query(
+      //   "SELECT * FROM public.quanao INNER JOIN public.danhmuc ON danhmuc=iddanhmuc WHERE doituong=" +
+      //     req.params.id +"ORDER BY quanao.gia DESC"
+      // );
    
       
       res.render("page/category", {
@@ -83,6 +87,89 @@ app.get("/category/:id", function(req, res, next) {
         TongDanhMucTreEm: TongDanhMucTreEm.rows,
         
       });
+      // res.render("page/category/:id/sortnamedown", {
+      //   title: "1612074_1612115",
+      //   QuanAo: QuanAo2.rows,
+      //   DanhMucNam: DanhMucNam.rows,
+      //   TongDanhMucNam: TongDanhMucNam.rows,
+      //   DanhMucNu: DanhMucNu.rows,
+      //   TongDanhMucNu: TongDanhMucNu.rows,
+      //   DanhMucTreEm: DanhMucTreEm.rows,
+      //   TongDanhMucTreEm: TongDanhMucTreEm.rows,
+        
+      // });
+
+    } finally {
+        
+      client.release();
+    }
+  })().catch(e => console.log(e.stack));
+});
+app.get("/category/:id/sortnamedown", function(req, res, next) {
+  (async () => {
+    const client = await pool.connect();
+    //let error = req.flash('error');
+    try {
+      const DanhMucNam = await client.query(
+        "SELECT * FROM public.danhmuc where doituong=1"
+      );
+      const TongDanhMucNam = await client.query(
+        `SELECT COUNT(*) as SoLuong
+        FROM public.quanao JOIN public.danhmuc
+        ON quanao.danhmuc = danhmuc.iddanhmuc
+        where doituong=1`
+      );
+
+      const DanhMucNu = await client.query(
+        "SELECT * FROM public.danhmuc where doituong=2"
+      );
+      const TongDanhMucNu = await client.query(
+        `SELECT COUNT(*) as SoLuong
+        FROM public.quanao JOIN public.danhmuc
+        ON quanao.danhmuc = danhmuc.iddanhmuc
+        where doituong=2`
+      );
+      const DanhMucTreEm = await client.query(
+        "SELECT * FROM public.danhmuc where doituong=3"
+      );
+      const TongDanhMucTreEm = await client.query(
+        `SELECT COUNT(*) as SoLuong
+        FROM public.quanao JOIN public.danhmuc
+        ON quanao.danhmuc = danhmuc.iddanhmuc
+        where doituong=3`
+      );
+      const QuanAo = await client.query(
+        "SELECT * FROM public.quanao INNER JOIN public.danhmuc ON danhmuc=iddanhmuc WHERE doituong=" +
+          req.params.id +"ORDER BY public.quanao.gia ASC"
+      );
+      const QuanAo2 = await client.query(
+        "SELECT * FROM public.quanao INNER JOIN public.danhmuc ON danhmuc=iddanhmuc WHERE doituong=" +
+          req.params.id +"ORDER BY public.quanao.gia DESC"
+      );
+   
+      console.log(QuanAo.rows)
+      res.render("page/category", {
+        title: "1612074_1612115",
+        QuanAo: QuanAo2.rows,
+        DanhMucNam: DanhMucNam.rows,
+        TongDanhMucNam: TongDanhMucNam.rows,
+        DanhMucNu: DanhMucNu.rows,
+        TongDanhMucNu: TongDanhMucNu.rows,
+        DanhMucTreEm: DanhMucTreEm.rows,
+        TongDanhMucTreEm: TongDanhMucTreEm.rows,
+        
+      });
+      // res.render("page/category/:id/sortnamedown", {
+      //   title: "1612074_1612115",
+      //   QuanAo: QuanAo2.rows,
+      //   DanhMucNam: DanhMucNam.rows,
+      //   TongDanhMucNam: TongDanhMucNam.rows,
+      //   DanhMucNu: DanhMucNu.rows,
+      //   TongDanhMucNu: TongDanhMucNu.rows,
+      //   DanhMucTreEm: DanhMucTreEm.rows,
+      //   TongDanhMucTreEm: TongDanhMucTreEm.rows,
+        
+      // });
 
     } finally {
         
@@ -156,11 +243,29 @@ app.get("/detail/:idquanao", function(req, res, next) {
       const DanhMucNam = await client.query(
         "SELECT * FROM public.danhmuc where doituong=1"
       );
+      const TongDanhMucNam = await client.query(
+        `SELECT COUNT(*) as SoLuong
+        FROM public.quanao JOIN public.danhmuc
+        ON quanao.danhmuc = danhmuc.iddanhmuc
+        where doituong=1`
+      );
       const DanhMucNu = await client.query(
         "SELECT * FROM public.danhmuc where doituong=2"
       );
+      const TongDanhMucNu = await client.query(
+        `SELECT COUNT(*) as SoLuong
+        FROM public.quanao JOIN public.danhmuc
+        ON quanao.danhmuc = danhmuc.iddanhmuc
+        where doituong=2`
+      );
       const DanhMucTreEm = await client.query(
         "SELECT * FROM public.danhmuc where doituong=3"
+      );
+      const TongDanhMucTreEm = await client.query(
+        `SELECT COUNT(*) as SoLuong
+        FROM public.quanao JOIN public.danhmuc
+        ON quanao.danhmuc = danhmuc.iddanhmuc
+        where doituong=3`
       );
       const result = await client.query(
         "SELECT * FROM quanao WHERE idquanao=" + req.params.idquanao
@@ -168,8 +273,11 @@ app.get("/detail/:idquanao", function(req, res, next) {
       res.render("page/detail", {
         result: result.rows,
         DanhMucNam: DanhMucNam.rows,
+        TongDanhMucNam: TongDanhMucNam.rows,
         DanhMucNu: DanhMucNu.rows,
-        DanhMucTreEm: DanhMucTreEm.rows
+        TongDanhMucNu: TongDanhMucNu.rows,
+        DanhMucTreEm: DanhMucTreEm.rows,
+        TongDanhMucTreEm: TongDanhMucTreEm.rows,
       });
     } finally {
       client.release();
