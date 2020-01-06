@@ -3,7 +3,7 @@ const pool = require("./model");
 var app = express();
 app.use(express.static("public"));
 // app.use(express.static("./public"));
-app.use(express.static(__dirname + '/public/img'));
+app.use(express.static(__dirname + "/public/img"));
 app.set("view engine", "ejs");
 app.set("views", "./views");
 // const Router = require('express-promise-router')
@@ -68,14 +68,14 @@ app.get("/category/:id", function(req, res, next) {
       );
       const QuanAo = await client.query(
         "SELECT * FROM public.quanao INNER JOIN public.danhmuc ON danhmuc=iddanhmuc WHERE doituong=" +
-          req.params.id +"ORDER BY public.quanao.gia ASC"
+          req.params.id +
+          "ORDER BY public.quanao.gia ASC"
       );
       // const QuanAo2 = await client.query(
       //   "SELECT * FROM public.quanao INNER JOIN public.danhmuc ON danhmuc=iddanhmuc WHERE doituong=" +
       //     req.params.id +"ORDER BY quanao.gia DESC"
       // );
-   
-      
+
       res.render("page/category", {
         title: "1612074_1612115",
         QuanAo: QuanAo.rows,
@@ -84,8 +84,7 @@ app.get("/category/:id", function(req, res, next) {
         DanhMucNu: DanhMucNu.rows,
         TongDanhMucNu: TongDanhMucNu.rows,
         DanhMucTreEm: DanhMucTreEm.rows,
-        TongDanhMucTreEm: TongDanhMucTreEm.rows,
-        
+        TongDanhMucTreEm: TongDanhMucTreEm.rows
       });
       // res.render("page/category/:id/sortnamedown", {
       //   title: "1612074_1612115",
@@ -96,11 +95,9 @@ app.get("/category/:id", function(req, res, next) {
       //   TongDanhMucNu: TongDanhMucNu.rows,
       //   DanhMucTreEm: DanhMucTreEm.rows,
       //   TongDanhMucTreEm: TongDanhMucTreEm.rows,
-        
-      // });
 
+      // });
     } finally {
-        
       client.release();
     }
   })().catch(e => console.log(e.stack));
@@ -140,14 +137,16 @@ app.get("/category/:id/sortnamedown", function(req, res, next) {
       );
       const QuanAo = await client.query(
         "SELECT * FROM public.quanao INNER JOIN public.danhmuc ON danhmuc=iddanhmuc WHERE doituong=" +
-          req.params.id +"ORDER BY public.quanao.gia ASC"
+          req.params.id +
+          "ORDER BY public.quanao.gia ASC"
       );
       const QuanAo2 = await client.query(
         "SELECT * FROM public.quanao INNER JOIN public.danhmuc ON danhmuc=iddanhmuc WHERE doituong=" +
-          req.params.id +"ORDER BY public.quanao.gia DESC"
+          req.params.id +
+          "ORDER BY public.quanao.gia DESC"
       );
-   
-      console.log(QuanAo.rows)
+
+      console.log(QuanAo.rows);
       res.render("page/category", {
         title: "1612074_1612115",
         QuanAo: QuanAo2.rows,
@@ -156,8 +155,7 @@ app.get("/category/:id/sortnamedown", function(req, res, next) {
         DanhMucNu: DanhMucNu.rows,
         TongDanhMucNu: TongDanhMucNu.rows,
         DanhMucTreEm: DanhMucTreEm.rows,
-        TongDanhMucTreEm: TongDanhMucTreEm.rows,
-        
+        TongDanhMucTreEm: TongDanhMucTreEm.rows
       });
       // res.render("page/category/:id/sortnamedown", {
       //   title: "1612074_1612115",
@@ -168,11 +166,9 @@ app.get("/category/:id/sortnamedown", function(req, res, next) {
       //   TongDanhMucNu: TongDanhMucNu.rows,
       //   DanhMucTreEm: DanhMucTreEm.rows,
       //   TongDanhMucTreEm: TongDanhMucTreEm.rows,
-        
-      // });
 
+      // });
     } finally {
-        
       client.release();
     }
   })().catch(e => console.log(e.stack));
@@ -226,7 +222,7 @@ app.get("/category/:doituong/:iddanhmuc", function(req, res, next) {
         DanhMucNu: DanhMucNu.rows,
         TongDanhMucNu: TongDanhMucNu.rows,
         DanhMucTreEm: DanhMucTreEm.rows,
-        TongDanhMucTreEm: TongDanhMucTreEm.rows,
+        TongDanhMucTreEm: TongDanhMucTreEm.rows
       });
     } finally {
       client.release();
@@ -277,7 +273,7 @@ app.get("/detail/:idquanao", function(req, res, next) {
         DanhMucNu: DanhMucNu.rows,
         TongDanhMucNu: TongDanhMucNu.rows,
         DanhMucTreEm: DanhMucTreEm.rows,
-        TongDanhMucTreEm: TongDanhMucTreEm.rows,
+        TongDanhMucTreEm: TongDanhMucTreEm.rows
       });
     } finally {
       client.release();

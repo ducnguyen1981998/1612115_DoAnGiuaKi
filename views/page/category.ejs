@@ -51,6 +51,24 @@
         object-fit: cover;
       }
     </style>
+    <script type="text/javascript">
+
+      function changeFunc() {
+       var selectBox = document.getElementById("formcontrol");
+       var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+       if(selectedValue==1){
+        var list = $("#rowproducts");
+        var listItems = list.children(".col-lg-4");
+        list.append(listItems.get().reverse());
+       }
+       if(selectedValue==2){
+        var list = $("#rowproducts");
+        var listItems = list.children(".col-lg-4");
+        list.append(listItems.get().reverse());
+       }
+      }
+   
+     </script>
   </head>
   <body>
     <!-- navbar-->
@@ -426,14 +444,15 @@
                       </div> -->
                       <div class="products-sort-by mt-2 mt-lg-0">
                         <strong>Sắp xếp</strong>
-                        <select name="sort-by" class="form-control">
-                          <option>Giá: từ thấp đến cao</option>
-                          <option>Giá: từ cao đến thấp</option>
-                          <option>Tên: A-Z</option>
-                          <option>Tên: Z-A</option>
-                          <option>Giảm giá</option>
+                        <select name="sort-by" class="form-control" 
+                        id="formcontrol" onchange="changeFunc()">
+                          <option value="1">Giá: từ thấp đến cao</option>
+                          <option value="2">Giá: từ cao đến thấp</option>
+                          <!-- <option>Tên: A-Z</option>
+                          <option>Tên: Z-A</option> -->
+                          <!-- <option>Giảm giá</option>
                           <option>Mới nhất</option>
-                          <option>Quà tặng</option>
+                          <option>Quà tặng</option> -->
                         </select>
                       </div>
                     </form>
@@ -716,5 +735,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="load-more-button.js"></script>
+    
   </body>
 </html>

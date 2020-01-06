@@ -491,10 +491,10 @@
                       <img src="/<%= result[0].anhquanao%>" alt="" class="img-fluid" />
                     </div>
                     <div class="item">
-                      <img src="/result[0].anhquanao" alt="" class="img-fluid" />
+                      <img src="/<%= result[0].anhquanao%>" alt="" class="img-fluid" />
                     </div>
                     <div class="item">
-                      <img src="/result[0].anhquanao" alt="" class="img-fluid" />
+                      <img src="/<%= result[0].anhquanao%>" alt="" class="img-fluid" />
                     </div>
                   </div>
                   <div class="ribbon sale">
@@ -516,7 +516,22 @@
                         >Scroll để xem chi tiết sản phẩm</a
                       >
                     </p>
-                    <p class="price"><%= result[0].gia*(100-result[0].giamgia)/100%> đ</p>
+                    <p class="price">
+
+                      <% if (result[0].giamgia>0) { %>
+                        <del><%= result[0].gia %> ₫</del>
+                        <strong
+                          style="color:red; font-weight: 700;font-size: x-large;"
+                          ><%= result[0].gia*(100-result[0].giamgia)/100%> ₫</strong
+                        >
+  
+                        <% } else { %>
+  
+                        <strong><%= result[0].gia*(100-result[0].giamgia)/100%> ₫</strong>
+  
+                        <% } %>
+
+                    </p>
                     <p class="text-center buttons">
                       <a href="/basket" class="btn btn-primary"
                         ><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a
