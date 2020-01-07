@@ -10,7 +10,8 @@ app.set("views", "./views");
 // const router = new Router()
 var port = Number(process.env.PORT || 5000);
 app.listen(port);
-
+console.log('THINGS WORK !!!');
+var auth = require('./auth')
 /* GET Trang chủ. */
 app.get("/", function(req, res, next) {
   (async () => {
@@ -97,6 +98,26 @@ app.get("/category/:id", function(req, res, next) {
       //   TongDanhMucTreEm: TongDanhMucTreEm.rows,
 
       // });
+    } finally {
+      client.release();
+    }
+  })().catch(e => console.log(e.stack));
+});
+app.get("/search", function(req, res, next) {
+  (async () => {
+    const client = await pool.connect();
+    try {
+
+      const QuanAo = await client.query(
+        "SELECT * FROM public.quanao INNER JOIN public.danhmuc ON danhmuc=iddanhmuc WHERE ((doituong=1) AND(LOWER(tenquanao) LIKE '"
+        +" "+
+        "') )ORDER BY public.quanao.gia ASC"
+      );
+      res.render("page/search", {
+        title: "1612074_1612115",
+        QuanAo: QuanAo.rows,
+        
+      });
     } finally {
       client.release();
     }
@@ -386,3 +407,4 @@ app.get("/thongKeDoanhSo", function(request, response) {
 app.get("/thongKeSoLuong", function(request, response) {
   response.render("admin/editproduct");
 });
+app.use('/auth',auth)
