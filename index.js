@@ -1,22 +1,26 @@
 var express = require("express");
+// const bodyParser = require("body-parser");
+// app.use(bodyParser.urlencoded({extended: true}));
 const pool = require("./model");
+var path = require('path');
 var app = express();
 app.use(express.static("public"));
 // app.use(express.static("./public"));
 app.use(express.static(__dirname + "/public/img"));
 app.set("view engine", "ejs");
-app.set("views", "./views");
+// app.set("views", path.join(__dirname, 'views/page'));
 // const Router = require('express-promise-router')
 // const router = new Router()
 var port = Number(process.env.PORT || 5000);
 app.listen(port);
-console.log('THINGS WORK !!!');
-var auth = require('./auth')
+// console.log('THINGS WORK !!!');
+// var auth = require('./auth')
 /* GET Trang chủ. */
+
 app.get("/", function(req, res, next) {
   (async () => {
     const client = await pool.connect();
-    // let error = req.flash('error');
+    
     try {
       //QuanAo
       const QuanAo = await client.query("SELECT * FROM public.quanao");
@@ -32,7 +36,10 @@ app.get("/", function(req, res, next) {
     }
   })().catch(e => console.log(e.stack));
 });
-
+// app.post('/customer-orders', (req, res) => {
+//   res.send('Username is ' + req.body.name + '<br>Password is ' + req.body.pwd);
+//   console.log(req.body)
+// });
 //Hiển thị danh sách chuyên mục
 app.get("/category/:id", function(req, res, next) {
   (async () => {
@@ -407,4 +414,4 @@ app.get("/thongKeDoanhSo", function(request, response) {
 app.get("/thongKeSoLuong", function(request, response) {
   response.render("admin/editproduct");
 });
-app.use('/auth',auth)
+// app.use('/auth',auth)
